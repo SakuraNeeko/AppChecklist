@@ -1,9 +1,8 @@
 {
-  "name": "app-checklist-cananvalle",
+  "name": "app-cananvalle",
   "version": "1.0.0",
-  "description": "App web para digitacion y firmas del checklist de cultivo",
-  "main": "api/reportes.js",
+  "description": "App web para digitacion y firmas",
   "dependencies": {
-    "pg": "^8.21.0"
+    "pg": "^8.11.3"
   }
 }
