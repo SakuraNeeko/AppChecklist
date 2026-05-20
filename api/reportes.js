@@ -5,7 +5,7 @@ const pool = new Pool({
     ssl: { rejectUnauthorized: false }
 });
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
     if (req.method === 'POST') {
         try {
             const { semana, area } = req.body;
@@ -20,4 +20,4 @@ export default async function handler(req, res) {
     } else {
         res.status(405).json({ message: 'Método no permitido' });
     }
-}
+};

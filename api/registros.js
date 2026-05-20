@@ -5,7 +5,7 @@ const pool = new Pool({
     ssl: { rejectUnauthorized: false }
 });
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
     if (req.method === 'POST') {
         try {
             const { reporteId, colaborador, desyeme, encanastado, firmaBase64 } = req.body;
@@ -14,11 +14,11 @@ export default async function handler(req, res) {
                  VALUES ($1, $2, $3, $4, $5)`,
                 [reporteId, colaborador, desyeme, encanastado, firmaBase64]
             );
-            res.status(200).json({ success: true, message: "Registro y firma guardados exitosamente" });
+            res.status(200).json({ success: true, message: "Registro guardado exitosamente" });
         } catch (err) {
             res.status(500).json({ error: err.message });
         }
     } else {
         res.status(405).json({ message: 'Método no permitido' });
     }
-}
+};
